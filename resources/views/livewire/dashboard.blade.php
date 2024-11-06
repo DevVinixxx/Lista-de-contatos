@@ -5,12 +5,11 @@
         </div>
     </div>
 
-    <!-- Exibindo informações do usuário -->
     <div class="row">
         <div class="col-md-4">
             <div class="card mb-4">
                 <div class="card-body text-center">
-                    {{-- <img src="{{ asset('images/' . Auth::user()->photo) }}" alt="Foto do Usuário" class="img-fluid rounded-circle" style="max-width: 150px; height: 150px;"> --}}
+                    <img src="{{ asset('imgs/default_user.png') }}" alt="Foto do Usuário" class="img-fluid rounded-circle" style="max-width: 150px; height: 150px;">
                     <h5 class="card-title mt-3">{{ Auth::user()->name }}</h5>
                     <p class="card-text">{{ Auth::user()->email }}</p>
                     <p class="card-text">Membro desde: {{ Auth::user()->created_at->format('d/m/Y') }}</p>
@@ -22,7 +21,10 @@
         <div class="col-md-8">
             <div class="card mb-4">
                 <div class="card-body">
-                    <h5 class="card-title">Atividade Recente</h5>
+                    <div class="d-flex justify-content-between">
+                        <h5 class="card-title">Atividade Recente</h5>
+                        <a href="#" class="btn btn-primary">Ver historico</a>
+                    </div>
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
