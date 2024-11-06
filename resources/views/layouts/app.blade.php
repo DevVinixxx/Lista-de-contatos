@@ -98,7 +98,7 @@
                 <!-- Menu à esquerda (dentro do card) -->
                 <div id="internalMenu">
                     <ul class="nav flex-column mb-3">
-                        <li class="nav-item"><a href="/contacts" class="nav-link">Contatos</a></li>
+                        <li class="nav-item"><a href="{{ route('contacts.index') }}" class="nav-link">Contatos</a></li>
                         <li class="nav-item"><a href="/contacts/create" class="nav-link">Novo Contato</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Configurações</a></li>
                     </ul>

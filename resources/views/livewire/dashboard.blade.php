@@ -13,7 +13,6 @@
                     <h5 class="card-title mt-3">{{ Auth::user()->name }}</h5>
                     <p class="card-text">{{ Auth::user()->email }}</p>
                     <p class="card-text">Membro desde: {{ Auth::user()->created_at->format('d/m/Y') }}</p>
-                    <a href="/profile/edit" class="btn btn-primary">Editar Perfil</a>
                 </div>
             </div>
         </div>
@@ -31,19 +30,16 @@
                                 <tr>
                                     <th>Tipo de Atividade</th>
                                     <th>Data</th>
-                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>Alteração de Contato</td>
                                     <td>22/01/2024</td>
-                                    <td>Concluído</td>
                                 </tr>
                                 <tr>
                                     <td>Adição de Novo Contato</td>
                                     <td>20/01/2024</td>
-                                    <td>Concluído</td>
                                 </tr>
                             </tbody>
                         </table>
