@@ -1,0 +1,6 @@
+
+/* Define a altura máxima do card e habilita a rolagem interna */
+.scrollable-card {
+    max-height: 80vh; /* Define a altura máxima do card */
+    overflow-y: auto; /* Ativa a rolagem vertical */
+}
