@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Livewire\Contacts\Create;
 use App\Livewire\Contacts\Index as ContactsIndex;
 use App\Livewire\Dashboard;
 use Illuminate\Support\Facades\Auth;
@@ -18,6 +19,7 @@ Route::middleware('auth')->group(function () {
 
     Route::group(['prefix' => 'contacts'], function () {
         Route::get('/', ContactsIndex::class)->name('contacts.index');
+        Route::get('/create', Create::class)->name('contacts.create');
     });
 
     Route::get('/dashboard', Dashboard::class)->name('dashboard');

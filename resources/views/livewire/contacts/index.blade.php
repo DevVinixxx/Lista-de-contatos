@@ -2,7 +2,7 @@
     <!-- Barra de ações rápidas -->
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="mb-0">Seus Contatos</h2>
-        <a href="#" class="btn btn-primary">+ Adicionar Contato</a>
+        <a href="{{ route('contacts.create') }}" class="btn btn-primary">+ Adicionar Contato</a>
     </div>
 
     <div class="card shadow-sm">

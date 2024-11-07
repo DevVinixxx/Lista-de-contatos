@@ -82,42 +82,45 @@
         }
     </style>
 </head>
-<body class="bg-light d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 bg-dark">
 
-    <main class="flex-grow-1 d-flex justify-content-center align-items-center">
-        <div class="card shadow-sm w-100" style="max-width: 800px; max-height: 90vh;">
-            <div class="card-body" style="overflow-y: auto; position: relative;">
+    <main class="d-flex justify-content-center align-items-center flex-grow-1 py-3">
+        <div class="row w-100 justify-content-center">
+            <div class="col-lg-10">
+                <div class="card shadow-lg border-0 rounded-4" style="width: 100%; max-width: 1000px; height: 90vh; margin: 0 auto;">
+                    <div class="card-body" style="overflow-y: auto; height: 100%; position: relative;">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <button class="btn btn-dark" type="button" onclick="toggleMenu()">
+                                ☰
+                            </button>
+                        </div>
+            
+                        <div id="internalMenu">
+                            <ul class="nav flex-column mb-3">
+                                <li class="nav-item"><a href="{{ route('dashboard') }}" class="nav-link">Dashboard</a></li>
+                                <li class="nav-item"><a href="{{ route('contacts.index') }}" class="nav-link">Contatos</a></li>
+                                <li class="nav-item"><a href="/contacts/create" class="nav-link">Novo Contato</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link">Configurações</a></li>
+                            </ul>
+                        </div>
 
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <!-- Botão do menu colapsável -->
-                    <button class="btn btn-dark" type="button" onclick="toggleMenu()">
-                        ☰
-                    </button>
-                </div>
-
-                <!-- Menu à esquerda (dentro do card) -->
-                <div id="internalMenu">
-                    <ul class="nav flex-column mb-3">
-                        <li class="nav-item"><a href="{{ route('contacts.index') }}" class="nav-link">Contatos</a></li>
-                        <li class="nav-item"><a href="/contacts/create" class="nav-link">Novo Contato</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Configurações</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    {{ $slot ?? '' }}
+                        <div>
+                            {{ $slot ?? '' }}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
 
     <footer class="bg-dark text-light py-3 text-center mt-auto">
-        <div class="container">
+        <div>
             <p class="mb-0">&copy; {{ date('Y') }} Lista de Contatos. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <!-- Overlay para escurecer o fundo -->
+
+
     <div id="overlay" class="overlay"></div>
 
     <script>
@@ -126,15 +129,12 @@
             const overlay = document.getElementById('overlay');
             const body = document.body;
 
-            // Alterna o menu
             menu.classList.toggle('show');
             overlay.classList.toggle('show');
 
-            // Alterna o desfoque no fundo
             body.classList.toggle('backdrop');
         }
 
-        // Fecha o menu se o overlay for clicado
         document.getElementById('overlay').addEventListener('click', function () {
             toggleMenu();
         });
