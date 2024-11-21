@@ -36,21 +36,21 @@
 
                 <div class="mb-4 col-12 col-md-6">
                     <label for="zipcode" class="form-label fw-semibold">CEP</label>
-                    <input type="zipcode" id="zipcode" wire:model="data.zipcode" name="zipcode" class="form-control shadow-sm rounded-3">
+                    <input type="zipcode" id="zipcode" wire:model.live="data.zipcode" name="zipcode" class="form-control shadow-sm rounded-3">
                 </div>
 
                 <div class="mb-4 col-12 col-md-6">
                     <label for="city" class="form-label fw-semibold">Cidade</label>
-                    <input type="city" id="city" wire:model="data.city" name="city" class="form-control shadow-sm rounded-3">
+                    <input type="city" id="city" wire:model.live="data.city" name="city" class="form-control shadow-sm rounded-3">
                 </div>
                 <div class="mb-4 col-12 col-md-6">
                     <label for="state" class="form-label fw-semibold">Estado</label>
-                    <input type="state" id="state" wire:model="data.state" name="state" class="form-control shadow-sm rounded-3">
+                    <input type="state" id="state" wire:model.live="data.state" name="state" class="form-control shadow-sm rounded-3">
                 </div>
 
                 <div class="mb-4 col-12 col-md-6">
-                    <label for="street" class="form-label fw-semibold">Endereço</label>
-                    <input type="street" id="street" wire:model="data.street" name="street" class="form-control shadow-sm rounded-3" placeholder="Logradouro">
+                    <label for="street" class="form-label fw-semibold">Logradouro</label>
+                    <input type="street" id="street" wire:model.live="data.street" name="street" class="form-control shadow-sm rounded-3">
                 </div>
 
                 <div class="mb-4 col-12 col-md-6">
@@ -60,7 +60,7 @@
 
                 <div class="mb-4 col-12 col-md-6">
                     <label for="neighborhood" class="form-label fw-semibold">Bairro</label>
-                    <input type="neighborhood" id="neighborhood" wire:model="data.neighborhood" name="neighborhood" class="form-control shadow-sm rounded-3">
+                    <input type="neighborhood" id="neighborhood" wire:model.live="data.neighborhood" name="neighborhood" class="form-control shadow-sm rounded-3">
                 </div>
 
                 <div class="mb-4 col-12 col-md-6">
