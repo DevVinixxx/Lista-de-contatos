@@ -16,56 +16,61 @@
 
                 <div class="mb-4 col-12 col-md-6">
                     <label for="phone_personal" class="form-label fw-semibold">Telefone Pessoal *</label>
-                    <input autocomplete="off" type="text" id="phone_personal" wire:model="data.number.phone_personal" name="phone_personal" class="form-control shadow-sm rounded-3" required>
+                    <input autocomplete="off" type="text" id="phone_personal" wire:model="data.phone.phone_personal" name="phone_personal" class="form-control shadow-sm rounded-3" required>
                 </div>
 
                 <div class="mb-4 col-12 col-md-6">
                     <label for="phone_work" class="form-label fw-semibold">Telefone Trabalho</label>
-                    <input autocomplete="off" type="text" id="phone_work" wire:model="data.number.phone_work" name="phone_work" class="form-control shadow-sm rounded-3">
+                    <input autocomplete="off" type="text" id="phone_work" wire:model="data.phone.phone_work" name="phone_work" class="form-control shadow-sm rounded-3">
                 </div>
 
                 <div class="mb-4 col-12 col-md-6">
                     <label for="phone_home" class="form-label fw-semibold">Telefone Casa</label>
-                    <input autocomplete="off" type="text" id="phone_home" wire:model="data.number.phone_home" name="phone_home" class="form-control shadow-sm rounded-3">
+                    <input autocomplete="off" type="text" id="phone_home" wire:model="data.phone.phone_home" name="phone_home" class="form-control shadow-sm rounded-3">
                 </div>
 
                 <div class="mb-4 col-12 col-md-6">
-                    <label for="email" class="form-label fw-semibold">E-mail</label>
-                    <input type="email" id="email" wire:model="data.email" name="email" class="form-control shadow-sm rounded-3">
+                    <label for="email" class="form-label fw-semibold">E-mail Pessoal</label>
+                    <input type="email" id="email" wire:model="data.emails.personal" name="email" class="form-control shadow-sm rounded-3">
+                </div>
+
+                <div class="mb-4 col-12 col-md-6">
+                    <label for="email" class="form-label fw-semibold">E-mail Trabalho</label>
+                    <input type="email" id="email" wire:model="data.emails.work" name="email" class="form-control shadow-sm rounded-3">
                 </div>
 
                 <div class="mb-4 col-12 col-md-6">
                     <label for="zipcode" class="form-label fw-semibold">CEP</label>
-                    <input type="zipcode" id="zipcode" wire:model.live="data.zipcode" name="zipcode" class="form-control shadow-sm rounded-3">
+                    <input type="zipcode" id="zipcode" wire:model.live="data.address.zipcode" name="zipcode" class="form-control shadow-sm rounded-3">
                 </div>
 
                 <div class="mb-4 col-12 col-md-6">
                     <label for="city" class="form-label fw-semibold">Cidade</label>
-                    <input type="city" id="city" wire:model.live="data.city" name="city" class="form-control shadow-sm rounded-3">
+                    <input type="city" id="city" wire:model.live="data.address.city" name="city" class="form-control shadow-sm rounded-3">
                 </div>
                 <div class="mb-4 col-12 col-md-6">
                     <label for="state" class="form-label fw-semibold">Estado</label>
-                    <input type="state" id="state" wire:model.live="data.state" name="state" class="form-control shadow-sm rounded-3">
+                    <input type="state" id="state" wire:model.live="data.address.state" name="state" class="form-control shadow-sm rounded-3">
                 </div>
 
                 <div class="mb-4 col-12 col-md-6">
                     <label for="street" class="form-label fw-semibold">Logradouro</label>
-                    <input type="street" id="street" wire:model.live="data.street" name="street" class="form-control shadow-sm rounded-3">
+                    <input type="street" id="street" wire:model.live="data.address.street" name="street" class="form-control shadow-sm rounded-3">
                 </div>
 
                 <div class="mb-4 col-12 col-md-6">
                     <label for="street_number" class="form-label fw-semibold">Numero</label>
-                    <input type="street_number" id="street_number" wire:model="data.street_number" name="street_number" class="form-control shadow-sm rounded-3">
+                    <input type="street_number" id="street_number" wire:model="data.address.street_number" name="street_number" class="form-control shadow-sm rounded-3">
                 </div>
 
                 <div class="mb-4 col-12 col-md-6">
                     <label for="neighborhood" class="form-label fw-semibold">Bairro</label>
-                    <input type="neighborhood" id="neighborhood" wire:model.live="data.neighborhood" name="neighborhood" class="form-control shadow-sm rounded-3">
+                    <input type="neighborhood" id="neighborhood" wire:model.live="data.address.neighborhood" name="neighborhood" class="form-control shadow-sm rounded-3">
                 </div>
 
                 <div class="mb-4 col-12 col-md-6">
                     <label for="complement" class="form-label fw-semibold">Complemento</label>
-                    <input type="complement" id="complement" wire:model="data.complement" name="complement" class="form-control shadow-sm rounded-3">
+                    <input type="complement" id="complement" wire:model="data.address.complement" name="complement" class="form-control shadow-sm rounded-3">
                 </div>
 
                 <div class="mb-4 col-12 col-md-6">

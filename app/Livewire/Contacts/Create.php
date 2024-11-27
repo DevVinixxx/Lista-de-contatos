@@ -18,26 +18,41 @@ class Create extends Component
     {
         try {
 
-            if(!empty($this->data['zipcode'] && strlen(preg_replace('/[^0-9]/', '', $this->data['zipcode'])) > 7)) {
-                $cep = preg_replace('/[^0-9]/', '', $this->data['zipcode']);
+            if (!empty($this->data['address']['zipcode']))  {
+                if ( strlen(preg_replace('/[^0-9]/', '', $this->data['address']['zipcode'])) >= 8 ) {
 
-                $viaCepService = new ViaCepService();
-                $response = $viaCepService->getAddress($cep);
-
-                if ($response && $response->successful()) {
-                    $address = $response;
-
-                    $this->data['street'] = $address['logradouro'] ?? '';
-                    $this->data['neighborhood'] = $address['bairro'] ?? '';
-                    $this->data['city'] = $address['localidade'] ?? '';
-                    $this->data['state'] = $address['uf'] ?? '';
-                } else {
-                    $this->alert('error', 'CEP não encontrado ou invalido.');
+                    $cep = preg_replace('/[^0-9]/', '', $this->data['address']['zipcode']);
+                
+                    $viaCepService = new ViaCepService();
+                    $response = $viaCepService->getAddress($cep);
+                
+                    if ($response && $response->successful()) {
+                        $address = $response;
+                
+                        $this->data['address']['street'] = $address['logradouro'] ?? '';
+                        $this->data['address']['neighborhood'] = $address['bairro'] ?? '';
+                        $this->data['address']['city'] = $address['localidade'] ?? '';
+                        $this->data['address']['state'] = $address['uf'] ?? '';
+                    }
                 }
             }
 
         } catch (\Throwable $th ) {
             Log::error('failed_load_cep_mothod', [
+                'error' => $th->getMessage(),
+                'file' => $th->getFile(),
+                'line' => $th->getLine(),
+            ]);
+        }
+    }
+
+    public function store() {
+        try {
+            $data = $this->data;
+
+
+        } catch (\Throwable $th) {
+            Log::error('failed_store_contact', [
                 'error' => $th->getMessage(),
                 'file' => $th->getFile(),
                 'line' => $th->getLine(),
@@ -51,10 +66,6 @@ class Create extends Component
         return $this->alert('success', 'flesh message success');
     }
 
-    public function mount()
-    {
-        //
-    }
 
     public function render()
     {

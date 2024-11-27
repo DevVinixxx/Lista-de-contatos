@@ -4,18 +4,16 @@ namespace App\Services\Internal;
 
 use Illuminate\Support\Facades\Log;
 
-class ContactService {
-
-    public function createContact() {
-        try {            
-            
+class EmailService{
+    public function createEmail(){
+        try {
+            //
         } catch (\Throwable $th) {
-            Log::error('failed_create_contact', [
+            Log::error('failed_create_email', [
                 'error' =>$th->getMessage(),
                 'file' => $th->getFile(),
                 'line' => $th->getLine(),
             ]);
         }
     }
-
 }
