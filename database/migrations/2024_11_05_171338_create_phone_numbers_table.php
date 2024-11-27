@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('phone_numbers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('contact_id')->constrained()->onDelete('cascade');
+            $table->bigInteger('contact_id');
             $table->enum('phone_type', ['cell', 'work', 'home'])->nullable();
             $table->string('phone_number', 20);
             $table->timestamps();
