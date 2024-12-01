@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Log;
 
 class NumberService {
 
-    public function createNumber() {
+    public function createNumber($contactId, $data) {
         try {
             //
         } catch (\Throwable $th) {

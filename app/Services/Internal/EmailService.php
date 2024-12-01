@@ -5,7 +5,7 @@ namespace App\Services\Internal;
 use Illuminate\Support\Facades\Log;
 
 class EmailService{
-    public function createEmail(){
+    public function createEmail($contactId, $data){
         try {
             //
         } catch (\Throwable $th) {
